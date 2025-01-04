@@ -1,21 +1,31 @@
-# discord.py framework
 import discord
+from discord import app_commands
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
+        # Sync the commands with Discord
+        try:
+            await self.tree.sync()
+            print(f"Slash commands synced successfully.")
+        except Exception as e:
+            print(f"Error syncing commands: {e}")
 
     async def on_message(self, message):
         print(f'Message from {message.author}: {message.content}')
 
-    @discord.app_commands.command(name="hide", description="Hides and waits for you to find it")
-    async def hide(interaction: discord.Interaction):
-        await interaction.response.send_message("Im going to hide!")
-    
-intents = discord.Intents.default() #specifies what events the bot listens to, in this case it loads the default set of intents
-intents.message_content = True # enables access to the content of messages
+    @app_commands.command(name="hide", description="Hides and waits for you to find it")
+    async def hide(self, interaction: discord.Interaction):
+        await interaction.response.send_message("I'm going to hide!")
 
+# Set up intents (make sure the bot can read message content)
+intents = discord.Intents.default()
+intents.message_content = True
+
+# Create an instance of MyClient
 client = MyClient(intents=intents)
-client.run('token')
+
+# Run the bot with your token
+client.run('YOUR_BOT_TOKEN')
 
 
