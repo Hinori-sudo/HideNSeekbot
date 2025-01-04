@@ -8,7 +8,7 @@ class MyClient(discord.Client):
     async def on_message(self, message):
         print(f'Message from {message.author}: {message.content}')
 
-    @client.tree.command(name="hide", description="Hides and waits for you to find it")
+    @discord.app_commands.command(name="hide", description="Hides and waits for you to find it")
     async def hide(interaction: discord.Interaction):
         await interaction.response.send_message("Im going to hide!")
     
