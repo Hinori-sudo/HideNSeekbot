@@ -1,5 +1,8 @@
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 # Make sure to define intents
 intents = discord.Intents.default()
@@ -37,7 +40,4 @@ async def hide(ctx):
 async def seek(ctx):
     await ctx.send("GO AND HIDE NOW OR ILL KILL YOU RAHHHHHHHHHHHHHH :3")
 
-bot.run('your_token_here')
-
-
-
+bot.run(os.getenv("BOT_TOKEN"))
