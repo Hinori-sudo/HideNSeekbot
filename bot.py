@@ -19,7 +19,7 @@ async def on_message(message):
         return
     
     # Custom on_message behavior (optional, if you want to handle it manually)
-    if message.content.startswith('!'):
+    if message.content.startswith('1'):
         await message.channel.send('Hello')
     
     # Ensure commands are still processed
@@ -28,6 +28,14 @@ async def on_message(message):
 @bot.command()
 async def hello(ctx):
     await ctx.send('Hello there!')
+
+@bot.command()
+async def hide(ctx):
+    await ctx.send("Im going to hide, give me some time and come find me!!")
+
+@bot.command()
+async def seek(ctx):
+    await ctx.send("GO AND HIDE NOW OR ILL KILL YOU RAHHHHHHHHHHHHHH :3")
 
 bot.run('your_token_here')
 
