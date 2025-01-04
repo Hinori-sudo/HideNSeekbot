@@ -1,25 +1,35 @@
 import discord
 from discord.ext import commands
-from discord import app_commands
 
-client = discord.Client()
+# Make sure to define intents
+intents = discord.Intents.default()
+intents.message_content = True  # This is required to read the content of messages
 
-@client.event
+# Use commands.Bot instead of discord.Client for command handling
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+@bot.event
 async def on_ready():
-    print("We hae logged in as {0.user}".format(client))
-    print("hello grubby :3")
+    print(f"We have logged in as {bot.user}")
+    print("Hello grubby :3")
 
-
-@client.event
+@bot.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == bot.user:
         return
     
+    # Custom on_message behavior (optional, if you want to handle it manually)
     if message.content.startswith('!'):
         await message.channel.send('Hello')
+    
+    # Ensure commands are still processed
+    await bot.process_commands(message)
 
-client.run('token')
+@bot.command()
+async def hello(ctx):
+    await ctx.send('Hello there!')
 
+bot.run('your_token_here')
 
 
 
