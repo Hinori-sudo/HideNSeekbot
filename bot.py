@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
+from pymongo import MongoClient
 import os
 load_dotenv()
 
@@ -13,8 +14,25 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f"We have logged in as {bot.user}")
+    print(f"✅ Logged in as {bot.user}")
     print("Hello grubby :3")
+
+def connect():
+    try:
+        print("Connecting to database...")
+
+        client = MongoClient(os.getenv('MONGO_TOKEN'))  # Set your MongoDB URI in your environment variable
+        
+        db_name = 'Discord-Bot'
+        db = client[db_name]
+
+        print("✅ Database connected!")
+
+    except Exception as error:
+        print(f"Error: {error}")
+        print("❌ Database did not connect!")
+
+connect()
 
 @bot.event
 async def on_message(message):
