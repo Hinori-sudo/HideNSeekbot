@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "discord.js": "^14.17.2",
-    "gcommands": "^10.0.0"
-  }
-}
