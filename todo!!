@@ -1,0 +1,25 @@
+# - App command: /hide
+#   - Require channel input
+#   - Database users hiding channel
+#   - Require players to hide in different channels?
+# - App command: /seek
+#   - Require channel input
+#   - Check whether hiding users database channel matches
+#   - If found, mark user as found in database
+# - App command: /start
+#   - Database all users participating
+#   - Randomly select a user as the seeker
+#   - Give timeout/option to cancel/leave game
+# - App command: /end
+#   - Premtively end the game
+#   - Require at least 60% participating to end
+# - Time limits/intervals
+#   - Cancel a started game if not started within 10 minutes of command
+#   - Allow hiders ~2 minuts to hide
+#   - Give seekers ~5 minutes to seek
+#   - Declare winners at end of game
+# - Stats/Read database 
+#   - Commands to check whos still hiding, found or seeking
+# - Leaderboard
+#   - Hiding/seeking leaderboards
+#   - Time/games won?
