@@ -8,6 +8,9 @@
 #   - If found, mark user as found in database
 # - App command: /start
 #   - Database all users participating
+#     - Component buttons for joining or ending the game
+#     - Command options for whether bot is participating
+#       - Component button for hider or seeker ^
 #   - Randomly select a user as the seeker
 #   - Give timeout/option to cancel/leave game
 # - App command: /end
