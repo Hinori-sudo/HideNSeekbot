@@ -12,17 +12,26 @@
 #     - Command options for whether bot is participating
 #       - Component button for hider or seeker ^
 #   - Randomly select a user as the seeker
+#     - Timeout seeker until desginated time is up
+#     - Determind designated time based on amount of players playing
 #   - Give timeout/option to cancel/leave game
 # - App command: /end
 #   - Premtively end the game
 #   - Require at least 60% participating to end
+#     - Component buttons
+#   - Delete previously using database
 # - Time limits/intervals
 #   - Cancel a started game if not started within 10 minutes of command
-#   - Allow hiders ~2 minuts to hide
-#   - Give seekers ~5 minutes to seek
+#   - Allow hiders ~2 minuts to hide (change depend on amount of players)
+#     - Timeout hiders until they are found
+#   - Give seekers ~5 minutes to seek (change depend on amount of players)
 #   - Declare winners at end of game
 # - Stats/Read database 
 #   - Commands to check whos still hiding, found or seeking
 # - Leaderboard
 #   - Hiding/seeking leaderboards
 #   - Time/games won?
+# - userInfo.js
+#   - Username, ID, hiding games won, seeker games won, bot games won, time hiding, time seeking, players found
+# - serverInfo.js
+#   - Server, games played, max player count, time spent playing
