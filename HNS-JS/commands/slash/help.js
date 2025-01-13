@@ -11,7 +11,7 @@ new Command({
   run: async (ctx) => {
     const icon = ctx.guild.iconURL() || ''
     
-    const helpEmbed = new EmberBuilder()
+    const helpEmbed = new EmbedBuilder()
     .setColor(0x8269c2)
     .setAuthor({ name: ctx.user.displayName, iconURL: ctx.user.displayAvatarURL({ dynamic: true }) })
     .setTimestamp()
