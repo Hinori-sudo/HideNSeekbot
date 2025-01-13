@@ -24,17 +24,17 @@ new Command({
       .setAuthor({name: name})
       .setFooter({ text: `ID: ${id}`})
       .setTimestamp()
-      .setTitle(`<:xannounce:1276188470250832014> 𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾 <:xannounce:1276188470250832014>`)
+      .setTitle(`𝚂𝙴𝚁𝚅𝙴𝚁 𝙸𝙽𝙵𝙾`)
       .setDescription(`«═══✧ ✦ ✧ ✦ ✧═══»`)
       .addFields([
-        { name: '<:xtriangle_medium:1276262944836947999> Server Owner:', value: `<:xtriangle_small:1276263767872770108> <@${ownerId}>`, inline: false },
-        { name: '<:xtriangle_medium:1276262944836947999> Member Count:', value: `<:xtriangle_small:1276263767872770108> ${memberCount}`, inline: true },
-        { name: '<:xtriangle_medium:1276262944836947999> Boost Count:', value: `<:xtriangle_small:1276263767872770108> ${boostCount}`, inline: true },
+        { name: 'Server Owner:', value: `<@${ownerId}>`, inline: false },
+        { name: 'Member Count:', value: `${memberCount}`, inline: true },
+        { name: 'Boost Count:', value: `${boostCount}`, inline: true },
       ])
       .addFields([
-        { name: '<:xtriangle_medium:1276262944836947999> Date Created:', value: `<:xtriangle_small:1276263767872770108> <t:${parseInt(createdTimestamp / 1000)}:R>`, inline: false },
-        { name: '<:xtriangle_medium:1276262944836947999> Role Count:', value: `<:xtriangle_small:1276263767872770108> ${roles}`, inline: true },
-        { name: '<:xtriangle_medium:1276262944836947999> Emote Count:', value: `<:xtriangle_small:1276263767872770108> ${emojis}`, inline: true },
+        { name: 'Date Created:', value: `<t:${parseInt(createdTimestamp / 1000)}:R>`, inline: false },
+        { name: 'Role Count:', value: `${roles}`, inline: true },
+        { name: 'Emote Count:', value: `${emojis}`, inline: true },
       ]);
 
       await ctx.reply({ embeds: [embed] });
